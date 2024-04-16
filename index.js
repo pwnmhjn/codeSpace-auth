@@ -1,1 +1,1 @@
-console.log("hello to condespaces")
+console.log("hello to codespaces")
