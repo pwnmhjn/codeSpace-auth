@@ -1,11 +1,10 @@
 const mongoose = require("mongoose")
-const mongoDB_URL = process.env
+const {MONGODB_URL} = process.env
 
 exports.connect = ()=>{
-    mongoose.connect(mongoDB_URL,{
-        useNewUrlParser:true,
-        useUnifiedTopology:true
-    }).then(()).catch((error)=>{
+    mongoose.connect(MONGODB_URL).then(()=>{
+        console.log("mongoDB connetion successfull")
+    }).catch((error)=>{
         console.log("DB connection failed")
         console.log(error)
         process.exit(1)
